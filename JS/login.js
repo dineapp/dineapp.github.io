@@ -46,11 +46,6 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#to_login").click(function(){
-		$("#login_box").css("display", "block");
-		$("#password_box").css("display", "none");
-	});
-
 	$("#register_link").click(function(){
 		$("#login_box").css("display", "none");
 		$("#register_box").css("display", "block");
@@ -77,11 +72,29 @@ $(document).ready(function(){
 				    console.log(user + "was successfully registered")
 				  },
 				  error: function(user, error) {
-				    // Show the error message somewhere and let the user try again.
-				    alert("Error: " + error.code + " " + error.message);
+				    $("#register_box").prepend("<p class='alert_text' id='invalid_email'>Error: " + error.message + "</p>")
 				  }
 				});
-			}
-		}
+			} else {
+				$("#register_box").prepend("<p class='alert_text' id='no_name'>Please make sure your emails match. </p>")
+			} 
+		} else if (fname === "" || lname ==="") {
+			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please fill in your name.</p>")
+		} else if (email === "" || conf_email ==="") {
+			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please fill in your email.</p>")
+		} else if (password === "") {
+			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please fill in your password.</p>")
+		} 
+		
+	});
+
+	$("#to_login").click(function(){
+		$("#login_box").css("display", "block");
+		$("#password_box").css("display", "none");
+	});
+
+	$("#to_login1").click(function(){
+		$("#login_box").css("display", "block");
+		$("#register_box").css("display", "none");
 	});
 });
