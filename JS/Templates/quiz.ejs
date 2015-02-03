@@ -1,0 +1,79 @@
+<%Parse.initialize("RnRYjP71R4vP3HiQoApoBIYK6WZbqre87TLSMFtv", "euBHIslJrC2Xa5y0tuJNl1iVZTPXmGBqcKyyga6j");
+
+var Question = Parse.Object.extend("Quiz");
+var query = new Parse.Query(Question);
+query.equalTo("active", true);
+query.ascending("Qnum");
+query.find({
+  success: function(results) {
+    // Do something with the returned Parse.Object values
+    for (var i = 0; i < results.length; i++) { 
+      var object = results[i];
+      console.log("results=" + results);
+      $("#q0").text(object.get("Qtext"));	  
+      $("#0A").text(object.get("ansA"));
+      $("#0B").text(object.get("ansB"));
+      $("#0C").text(object.get("ansC"));
+      $("#0D").text(object.get("ansD"))
+      $("#q1").text(object.get("Qtext"));   
+      $("#1A").text(object.get("ansA"));
+      $("#1B").text(object.get("ansB"));
+      $("#1C").text(object.get("ansC"));
+      $("#1D").text(object.get("ansD"))
+
+    }
+
+  },
+  error: function(error) {
+    console.log("Error: " + error.code + " " + error.message);
+  }
+});
+
+%>
+<div class='container'>
+	<div class="qcontainer">
+		<div class="qbox">
+      <h1 id="q0" class="quest">
+      <h1 id="q1" class="quest">
+      </h1>
+		</div>
+		<div class="abox">
+      <div id='0A' class='smallbox ansD btn btn-default ans'>
+        <h3 id='0A' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='0B' class='smallbox ansD btn btn-default ans'>
+        <h3 id='0B' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='0C' class='smallbox ansD btn btn-default ans'>
+        <h3 id='0C' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='0D' class='smallbox ansD btn btn-default ans'>
+        <h3 id='0D' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='1A' class='smallbox ansD btn btn-default ans'>
+        <h3 id='1A' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='1B' class='smallbox ansD btn btn-default ans'>
+        <h3 id='1B' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='1C' class='smallbox ansD btn btn-default ans'>
+        <h3 id='1C' class='ansD ans'>
+        </h3>
+      </div>
+      <div id='1D' class='smallbox ansD btn btn-default ans'>
+        <h3 id='1D' class='ansD ans'>
+        </h3>
+      </div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+
+</style>
+
