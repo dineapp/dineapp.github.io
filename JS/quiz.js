@@ -52,7 +52,7 @@ $(".ans4").click(function(){
 	currentUser.set("quizResults",ansArray);
 	currentUser.save(null, {
 		success: function(user) {
-    	window.location.href="../HTML/main.html"
+    	window.location.href="../HTML/app.html"
   },
   error: function(user, error) {
     // Show the error message somewhere and let the user try again.
