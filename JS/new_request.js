@@ -4,9 +4,9 @@ var name = currentUser.get("first_name");
 var userID =  currentUser.get("username");
 $(".name").text(name);
 var date = new Date();
-var month = date.getMonth().toString();
-var day = date.getDate().toString();
-var year = date.getFullYear().toString();
+var month = date.getMonth();
+var day = date.getDate();
+var year = date.getFullYear();
 var minDate = year + "-" + month + "-" + day;
 var rans0;
 var rans1;
@@ -17,7 +17,7 @@ var rAnswerArray;
 var rdate;
 var rppl;
 var rtime;
-var userID =  currentUser.get("username");
+var userID =  currentUser.id;
 
 
 $("#rdate").attr("min", minDate);
@@ -35,8 +35,7 @@ function requesting(){
 }
 
 $(".rans0").click(function(){
-	rans0 = $(this).text();
-	console.log(rans0);
+	rans0 = " " + $(this).text();
 	$(".rans0").css("display","none");
 	$("#rq0").css("display","none");
 	$(".rans1").css("display","inline");
@@ -44,8 +43,7 @@ $(".rans0").click(function(){
 });
 
 $(".rans1").click(function(){
-	rans1 = $(this).text();
-	console.log(rans1);
+	rans1 = " " + $(this).text();
 	$(".rans1").css("display","none");
 	$("#rq1").css("display","none");
 	$(".rans2").css("display","inline");
@@ -53,7 +51,7 @@ $(".rans1").click(function(){
 });
 
 $(".rans2").click(function(){
-	rans2 = $(this).text();
+	rans2 = " " + $(this).text();
 	console.log(rans2);
 	$(".rans2").css("display","none");
 	$("#rq2").css("display","none");
@@ -62,7 +60,7 @@ $(".rans2").click(function(){
 });
 
 $(".rans3").click(function(){
-	rans3 = $(this).text();
+	rans3 = " " + $(this).text();
 	console.log(rans3);
 	$(".rans3").css("display","none");
 	$("#rq3").css("display","none");
@@ -71,24 +69,23 @@ $(".rans3").click(function(){
 });
 
 $(".rans4").click(function(){
-	rans4 = $(this).text();
-	console.log(rans4);
+	rans4 = " " + $(this).text();
 	$(".rans2").css("display","none");
 	$("#rq2").css("display","none");
 	rAnswerArray = [rans0, rans1, rans2, rans3, rans4];
 	console.log(rAnswerArray + " " + rppl + " " + rtime + " " + rdate + " " + userID)
 	var Request = Parse.Object.extend("Request");
 	var request = new Request();
-	request.set("user",userID);
 	request.set("date", rdate);
 	request.set("time",rtime);
 	request.set("party_size", rppl);
 	request.set("preferences",rAnswerArray);
+	request.set("status","Pending");
+	request.set("parent", currentUser);
 
 	request.save(null, {
 		success: function(request) {
-    	
-    	window.location.href="../HTML/app.html"
+    	window.location.href = "../HTML/app.html"
   },
   error: function(request, error) {
     // Show the error message somewhere and let the user try again.

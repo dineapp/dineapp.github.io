@@ -58,6 +58,7 @@ $(document).ready(function(){
 		var email = $("#register_email").val();
 		var conf_email = $("#confirm_email").val();
 		var password = $("#register_password").val();
+		var phone_number = $("phone_number").val();
 		if (fname != "" & lname != "" & email != "" & conf_email != "" & password != ""  ) {
 			if (email === conf_email){
 				var user = new Parse.User();
@@ -66,6 +67,7 @@ $(document).ready(function(){
 				user.set("username", email);
 				user.set("password", password);
 				user.set("email", email);
+				user.set("phone_number", phone_number);
 				 
 				user.signUp(null, {
 				  success: function(user) {

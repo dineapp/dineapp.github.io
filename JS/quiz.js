@@ -8,8 +8,7 @@ var ansArray;
 var userID;
 var currentUser = Parse.User.current();
 $(".ans0").click(function(){
-	ans0 = $(this).text();
-	console.log(ans0);
+	ans0 = " " + $(this).text();
 	$(".ans0").css("display","none");
 	$("#q0").css("display","none");
 	$(".ans1").css("display","inline");
@@ -17,8 +16,7 @@ $(".ans0").click(function(){
 });
 
 $(".ans1").click(function(){
-	ans1 = $(this).text();
-	console.log(ans1);
+	ans1 = " " + $(this).text();
 	$(".ans1").css("display","none");
 	$("#q1").css("display","none");
 	$(".ans2").css("display","inline");
@@ -26,8 +24,7 @@ $(".ans1").click(function(){
 });
 
 $(".ans2").click(function(){
-	ans2 = $(this).text();
-	console.log(ans2);
+	ans2 = " " + $(this).text();
 	$(".ans2").css("display","none");
 	$("#q2").css("display","none");
 	$(".ans3").css("display","inline");
@@ -35,8 +32,7 @@ $(".ans2").click(function(){
 });
 
 $(".ans3").click(function(){
-	ans3 = $(this).text();
-	console.log(ans3);
+	ans3 =" " +  $(this).text();
 	$(".ans3").css("display","none");
 	$("#q3").css("display","none");
 	$(".ans4").css("display","inline");
@@ -44,8 +40,7 @@ $(".ans3").click(function(){
 });
 
 $(".ans4").click(function(){
-	ans4 = $(this).text();
-	console.log(ans4);
+	ans4 =" " +  $(this).text();
 	$(".ans2").css("display","none");
 	$("#q2").css("display","none");
 	ansArray = [ans0, ans1, ans2, ans3, ans4];

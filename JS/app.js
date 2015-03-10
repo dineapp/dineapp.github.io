@@ -28,4 +28,3 @@ $(".take_quiz").click(function(){
 $(".new_menu").click(function(){
   window.location.href = "new_request.html";
 });
-$(".logout").click(Parse.User.logOut());

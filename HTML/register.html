@@ -28,6 +28,8 @@
         <br>
         <input type='password' name='confirm_password' placeholder="retype password" id='register_password_confirm'>
         <br>
+        <input type="type" name="phone_number" placeholder="phone number" id="phone_number">
+        <br>
         <button id='register_button' onclick="register()">Register
         </button>
       </form>
@@ -38,6 +40,7 @@
     var password = $("#register_password").val();
     var conf_password = $("#register_password_confirmation").val();
     var name = $("#register_last_name").val() + ", " + $("#register_first_name").val();
+    
     console.log("button pushed");
     /*if (password === conf_password & password != null & email != null & first_name != null & last_name != null){
       user.set("username", email);

@@ -29,7 +29,6 @@ query.find({
     // Do something with the returned Parse.Object values
     for (var i = 0; i < results.length; i++) { 
       var object = results[i];
-      console.log("results=" + results);
       $('#q'+i).text(object.get("Qtext"));	  
       $("#A"+i).text(object.get("ansA"));
       $("#B"+i).text(object.get("ansB"));
