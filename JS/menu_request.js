@@ -11,6 +11,7 @@ var requestor;
 var requestorFN;
 var requestorLN;
 var requestorM;
+var requestorID;
 var id;
 var Requests = Parse.Object.extend("Request");
 var User = Parse.Object.extend("User");
@@ -25,6 +26,7 @@ openRequests.find({
       requestor =  object.get("parent");
       requestorFN = requestor.get("first_name");
       requestorLN = requestor.get("last_name");
+      requestorID = requestor.id
       var quiz_results = requestor.get("quizResults");
       var request
       id = object.id;
@@ -53,7 +55,15 @@ openRequests.find({
     );
 
          
-      };     
+      
+
+      analytics.identify(requestorID, {
+        "name": requestorFN + " " + requestorLN ,
+        "email": requestorM,
+        "id":  requestorID,
+      });   
+
+  }; 
 },
   error: function(error) {
     // There was an error.
@@ -110,26 +120,31 @@ function getOptions (){
       images.push(picture);
       ids.push(oid);
     }
-      console.log(names + " " + foods +  " " + ids + " " + images)
 
        analytics.track('send_options', {
-        "option1.name": names[0],
-        "option2.name": names[1],
-        "option3.name": names[2],
-        "option1.food": foods[0],
-        "option2.food": foods[1],
-        "option3.food": foods[2],
-        "option1.picture": images[0],
-        "option2.picture": images[1],
-        "option3.picture": images[2],
-        "option1.id": optionArray[0],
-        "option2.id": ids[1],
-        "option3.id": ids[2],
+        "option1_name": names[0],
+        "option2_name": names[1],
+        "option3_name": names[2],
+        "option1_food": foods[0],
+        "option2_food": foods[1],
+        "option3_food": foods[2],
+        "option1_picture": images[0],
+        "option2_picture": images[1],
+        "option3_picture": images[2],
+        "option1_id": optionArray[0],
+        "option2_id": ids[1],
+        "option3_id": ids[2],
         "request_id": id,
         "requestor_fn": requestorFN,
         "requestor_ln": requestorLN,
         "requestor_email": requestorM,
-});
+      });
+
+      
+       update_status("Completed");
+
+
+       
     },
     error: function(error) {
       console.log("Error: " + error.code + " " + error.message);
@@ -161,21 +176,11 @@ function status_change(){
         "requestor_email": requestorM,
         "status": status,
         "request_id": id,
-        "id": userID,
+        "id": requestorID,
+
 
 });
-      
 
-   
-    _cio.track("status_change", {
-        "requestor_fn": requestorFN,
-        "requestor_ln": requestorLN,
-        "requestor_email": requestorM,
-        "status": status,
-        "request_id": id,
-        "id": userID,
-
-});
 
       $("#status").text(status);
       
@@ -189,6 +194,25 @@ function status_change(){
   return false
 }
 
+function update_status(new_status){
+  var openRequests = new Parse.Query("Request");
+  openRequests.equalTo("objectId", requestID);
+  openRequests.first({
+    
+  success: function(results) {
+    results.set("status", new_status);
+    results.save();
+
+
+    $("#status").text(new_status);
+      
+
+  },
+  error: function(error) {
+   console.log(error)
+  }
+});
+}
 
 
  
