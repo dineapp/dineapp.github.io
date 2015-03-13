@@ -1,7 +1,11 @@
 Parse.initialize("RnRYjP71R4vP3HiQoApoBIYK6WZbqre87TLSMFtv", "euBHIslJrC2Xa5y0tuJNl1iVZTPXmGBqcKyyga6j");
 var currentUser = Parse.User.current();
+var currentUser = Parse.User.current();
 var name = currentUser.get("first_name");
-var userID =  currentUser.get("username");
+var userEmail = currentUser.get("email");
+var userFirstName = currentUser.get("first_name");
+var userLastName = currentUser.get("last_name");
+var userID = currentUser.id;
 $(".name").text(name);
 var date = new Date();
 var month = date.getMonth();
@@ -85,6 +89,13 @@ $(".rans4").click(function(){
 
 	request.save(null, {
 		success: function(request) {
+			analytics.track("new_request",{
+				"date": rdate,
+				"time": rtime,
+				"party_size": rppl,
+				"preferences": rAnswerArray,
+				"status", "Pending"
+			});
     	window.location.href = "../HTML/app.html"
   },
   error: function(request, error) {
