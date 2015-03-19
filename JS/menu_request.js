@@ -37,6 +37,8 @@ openRequests.find({
       requestorFN = requestor.get("first_name");
       requestorLN = requestor.get("last_name");
       requestorID = requestor.id
+      var restrictions = requestor.get("restrictions");
+      var allergies = requestor.get("allergies");
       var quiz_results = requestor.get("quizResults");
       var request
       id = object.id;
@@ -61,6 +63,7 @@ openRequests.find({
       "<h3 id='name'>" + requestorLN + ", " + requestorFN + "</h3>"+
       "<h4>"+ requestorM + ", " + phone + "</h4>"+
       "<h4>"+ quiz_results + "</h4>"+
+      "<br><h4>"+restrictions + "; " + allergies  +"</h4>"+
       "</div><br>"
     );
 

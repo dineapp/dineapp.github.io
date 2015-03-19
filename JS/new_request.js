@@ -94,7 +94,7 @@ $(".rans4").click(function(){
 				"time": rtime,
 				"party_size": rppl,
 				"preferences": rAnswerArray,
-				"status", "Pending"
+				"status": "Pending"
 			});
     	window.location.href = "../HTML/app.html"
   },

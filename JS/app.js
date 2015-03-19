@@ -54,7 +54,7 @@ query.find({
 $(".name").text(name);
 
 $(".take_quiz").click(function(){
-  window.location.href = "quiz.html";
+  window.location.href = "restrictions.html";
 });
 $(".new_menu").click(function(){
   window.location.href = "new_request.html";
