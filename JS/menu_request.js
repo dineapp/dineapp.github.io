@@ -209,6 +209,7 @@ function statusChange(){
     
     success: function(results) {
       results.set("status", status);
+      results.set("concierge", currentUser);
       results.save();
       item.attr('checked',false);
 
@@ -216,6 +217,7 @@ function statusChange(){
         "requestor_fn": requestorFN,
         "requestor_ln": requestorLN,
         "requestor_email": requestorM,
+        "concierge": userFirstName,
         "status": status,
         "request_id": id,
         "id": requestorID,
@@ -309,8 +311,8 @@ function createReservation(){
           reservation.set("party_size", size);
           reservation.set("platform", source);
           reservation.set("reservation_name", name);
-          reservation.set("diner", currentUser);
-          reservation.set("concierge", userFirstName + " " + userLastName)
+          reservation.set("diner", requestor);
+          reservation.set("concierge", currentUser)
           console.log(size);
           reservation.save(null,{
             success: function(reservation){

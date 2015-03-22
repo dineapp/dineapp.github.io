@@ -5,27 +5,32 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   
 <!-- Homepage CSS -->
-  <link rel="stylesheet" href="../CSS/app.css">
+  <link rel="stylesheet" href="../CSS/account.css">
 	
 <!-- Parse API -->
 	  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
     
 <!-- Backbone and Dependencies-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-  <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
-<!-- End Backbone -->
- <script type="text/javascript">
+
+ <script type="text/javascript"
+src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
+<script type="text/javascript">
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
   analytics.load("82AGlsRbRM");
   analytics.page()
   }}();
 </script>
+  
+
+  <script src="../JS/ppl.js"></script>
+ 
+  
 </head>
+
 <body>
 	
 <!-- End Navbar/Begin Container -->	
-
   <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -50,9 +55,9 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="name"></span> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="new_request.html">New Reservation</a></li>
+                <li><a href="#">New Reservation</a></li>
                 <li><a href="#">View Menus</a></li>
-                <li><a href="account.html">Account Settings</a></li>
+                <li><a href="#">My Flavor Profile</a></li>
                 <li class="divider"></li>
                 <li class="logout"><a class="logout">Log Out</a></li>
               </ul>
@@ -61,46 +66,41 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-  <div class='home'>
-    <h1> Welcome to DINE </h1>
-    <div class="trending">
-      <h1 class="request_title">
-        Pending Requests
-      </h1>
-      <div class='request_column'>
-        
-
-      </div>
-      <h1 class="reservation_title">
-        Upcoming Reservations
-      </h1>
-      <div class='reservation_column'>
-        
-
-      </div>
-    </div>
-    <div class="take_quiz btn btn-default">
-      <h3>Take the Quiz</h3>
-    </div>
+  <div class="account container">
+   <!-- <div id="authenticate">
+      <h4> Please Login to Continue. </h6>
+        <label>Email:</label><h5 class="text" id='email1'></h5><br>
+        <label>Password:</label><br><input type="text" id="password"><br><br>
+        <div id="login" class="btn btn-primary">Login</div>
+    </div>-->
+    <div class="details">
+      <label>First Name:</label><h5 class="text" id='first_name'></h5><input type="text" id="edit_fn" class='editing'><br>
+      <label>Last Name:</label><h5 class="text" id='last_name'></h5><input type="text" id="edit_ln" class='editing'><br>
+      <label>Email:</label><h5 class="text" id='email'></h5><input type="text" id="edit_email" class='editing'><br>
+      <label>Phone Number:</label><h5 class="text" id='phone'></h5><input type="number" id="edit_pn" class='editing'><br>
+      <label>Password:</label><h5 class="text" id='password'>*****</h5><input type="password" id="edit_pass" class='editing'><br>
+      <div id="edit_details" class="btn btn-primary">Edit</div>
+      <div id="edit_details1" class="btn btn-primary">Save</div>
+     </div>
   </div>
-  <div class="new_menu btn btn-default">
-      <h3>New Request</h3>
-    </div>
-  </div>
+  
+
+
 
 
 <!-- Bootstrap JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- APP JS -->
 
 <!-- Modela JS -->
-   <script src="../js/app.js"></script>
-  <footer>
-    <script type="text/javascript">
-      analytics.identify(userID, {
-          "name": userFirstName + " " + userLastName,
-          "email": userEmail,
-        });   
-    </script>
-</script>
-  </footer>
+ <script src="../JS/account.js"></script>
+<footer>
+  
+<script type="text/javascript">
+  
+  </script>
+  
+
+</footer>
+
 </body>
