@@ -1,0 +1,86 @@
+.container{
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	color: white;
+	font-family: "Roboto";
+	font-weight: 300
+}
+
+.restaurant_home,.qcontainer{
+	text-align: center;
+	top:25%;
+	position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#rdate, #rppl{
+	margin: 5px;
+	border-radius: 3px;
+	border: none;
+	color: black;
+	text-align: center;
+	height:30px;
+}
+
+#rppl{
+	width: 30px;
+}
+
+#rdate{
+	width: 130px;}
+
+select {
+	background-color: white;
+	border: none;
+	color: black;
+	height: 30px
+}
+
+h4, label{
+	font-weight: 100
+}
+
+#rsubmit{
+	margin: 30px;
+	background-color: white;
+	font-size: 1.3em;
+	height: 40px;
+	width: 300px
+}
+
+.rqbox{
+	text-align: center;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.rquest{
+	font-weight: 200;
+	line-height: 150%
+	
+}
+
+#other-inpt{
+	height:150px;
+	width:500px;
+	border-radius: 15px;
+	border:none;
+	margin: 15px
+}
+
+.confirm{
+	margin: 0px 5px;
+}

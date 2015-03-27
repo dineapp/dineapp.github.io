@@ -3,7 +3,9 @@
 <head>
 <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
   
 <!-- Homepage CSS -->
@@ -14,8 +16,6 @@
     
 <!-- Backbone and Dependencies-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-  <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
 <!-- End Backbone -->
   
 </head>
@@ -51,24 +51,21 @@ query.find({
 <div class='container'>
 	<div class="qcontainer">
 		<div class="qbox">
-      <h1 id="q0" class="quest">
-      <h1 id="q1" class="quest">
-      <h1 id="q2" class="quest">
-      <h1 id="q3" class="quest">
-      <h1 id="q4" class="quest">
-      </h1>
+      <h1 id="q0" class="quest"></h1>
+      <h1 id="q1" class="quest"></h1>
+      <h1 id="q2" class="quest"></h1>
+      <h1 id="q3" class="quest"></h1>
+      <h1 id="q4" class="quest"></h1>
 		</div>
 		<div class="abox" id="abox0">
-      <div data-name='A0' id="A0" class='ansA btn btn-default ans ans0'>
+      <div id="A0" class='ansA btn btn-default ans ans0'>
       </div>
-      <div data-name='B0' id='B0' class='ansB btn btn-default ans ans0'>
+      <div id='B0' class='ansB btn btn-default ans ans0'>
       </div>
-      <div data-name='C0' id='C0' class='ansC btn btn-default ans ans0'>
+      <div id='C0' class='ansC btn btn-default ans ans0'>
       </div>
-      <div data-name='D0' id='D0' class='ansD btn btn-default ans ans0'>
+      <div id='D0' class='ansD btn btn-default ans ans0'>
       </div>
-    </div>
-    <div class="abox" id="abox1">
       <div id='A1' class='ansA btn btn-default ans  ans1'>
       </div>
       <div id='B1' class='ansB btn btn-default ans ans1'>
@@ -77,8 +74,6 @@ query.find({
       </div>
       <div id='D1' class='ansD btn btn-default ans ans1'>
       </div>
-    </div>
-    <div class="abox" id="abox1">
       <div id='A2' class='ansA btn btn-default ans ans2'>
       </div>
       <div id='B2' class='ansB btn btn-default ans ans2'>
@@ -87,9 +82,6 @@ query.find({
       </div>
       <div id='D2' class='ansD btn btn-default ans ans2'>
       </div>
-		</div>
-	</div>
-  <div class="abox" id="abox1">
       <div id='A3' class='ansA btn btn-default ans ans3'>
       </div>
       <div id='B3' class='ansB btn btn-default ans ans3'>
@@ -98,9 +90,6 @@ query.find({
       </div>
       <div id='D3' class='ansD btn btn-default ans ans3'>
       </div>
-    </div>
-  </div>
-  <div class="abox" id="abox1">
       <div id='A4' class='ansA btn btn-default ans ans4'>
       </div>
       <div id='B4' class='ansB btn btn-default ans ans4'>
@@ -109,11 +98,14 @@ query.find({
       </div>
       <div id='D4' class='ansD btn btn-default ans ans4'>
       </div>
-    </div>
   </div>
+  <div id='new_user'>
+    <h3>Now that you've told us all about what you like and dislike,<br> let's tell a concierge that you're ready to eat out!<h3>
+    <a href="new_request.html"><div id="new_request" class="btn btn-danger">Continue!</div></a><br>
+    <a id="skip"href="app.html">Skip</a>
 </div>
 <style type="text/css">
-  .ans1, .ans2, #q1, #q2, .ans3, .ans4, #q3, #q4{
+  .ans1, .ans2, #q1, #q2, .ans3, .ans4, #q3, #q4, #new_user{
     display: none;
   }
 </style>
