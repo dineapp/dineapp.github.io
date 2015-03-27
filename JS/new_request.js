@@ -41,7 +41,7 @@ function requesting(){
 		} else{
 			$("#request_input").css("display","none");
 			$(".rans0").css("display", "inline");
-			$("#rq0").css("display","flex");
+			$("#rq0").css("display","inline");
 		}
 	
 
@@ -53,7 +53,7 @@ $(".rans0").click(function(){
 	$(".rans0").css("display","none");
 	$("#rq0").css("display","none");
 	$(".rans1").css("display","inline");
-	$("#rq1").css("display","flex");
+	$("#rq1").css("display","inline");
 });
 
 $(".rans1").click(function(){
@@ -61,7 +61,7 @@ $(".rans1").click(function(){
 	$(".rans1").css("display","none");
 	$("#rq1").css("display","none");
 	$(".rans2").css("display","inline");
-	$("#rq2").css("display","flex");
+	$("#rq2").css("display","inline");
 });
 
 $(".rans2").click(function(){
@@ -70,7 +70,7 @@ $(".rans2").click(function(){
 	$(".rans2").css("display","none");
 	$("#rq2").css("display","none");
 	$(".rans3").css("display","inline");
-	$("#rq3").css("display","flex");
+	$("#rq3").css("display","inline");
 });
 
 $(".rans3").click(function(){
@@ -79,7 +79,7 @@ $(".rans3").click(function(){
 	$(".rans3").css("display","none");
 	$("#rq3").css("display","none");
 	$(".rans4").css("display","inline");
-	$("#rq4").css("display","flex");
+	$("#rq4").css("display","inline");
 });
 
 $(".rans4").click(function(){

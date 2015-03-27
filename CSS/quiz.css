@@ -24,3 +24,37 @@ h1{
 #restrictions_submit{
 	margin-top: 10px
 }
+
+.abox, .qbox, #new_user{
+	text-align: center;
+	margin-bottom: 10px
+}
+
+.qcontainer{
+	vertical-align: middle;
+	position: relative;
+	top:30%;
+}
+
+.quest{
+	margin-bottom: 10px
+}
+
+#skip{
+	font-size: .5em;
+	text-decoration: underline;
+}
+
+#new_request{
+	height: 40px;
+	width: 100px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-size: .8em;
+	text-align: center;
+	padding-left: 8px
+}
+
+.confirm{
+	margin-left: 20px
+}
