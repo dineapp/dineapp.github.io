@@ -1,0 +1,26 @@
+.container{
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	color: white;
+	font-family: "Roboto";
+	font-weight: 300
+}
+
+h1{
+	text-align: center;
+}
+
+.container input{
+	margin-bottom: 5px
+}
+
+.other{
+	height:30px;
+	width: 200px;
+}
+
+#restrictions_submit{
+	margin-top: 10px
+}

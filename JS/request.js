@@ -1,18 +1,22 @@
 Parse.initialize("RnRYjP71R4vP3HiQoApoBIYK6WZbqre87TLSMFtv", "euBHIslJrC2Xa5y0tuJNl1iVZTPXmGBqcKyyga6j");
 var currentUser = Parse.User.current();
+var name = currentUser.get("first_name");
+var userEmail = currentUser.get("email");
+var userFirstName = currentUser.get("first_name");
+var userLastName = currentUser.get("last_name");
+var userID = currentUser.id;
 var user = [];
 var Requests = Parse.Object.extend("Request");
 var User = Parse.Object.extend("User");
 var openRequests = new Parse.Query("Request");
 openRequests.notEqualTo("status", "Confirmed");
-openRequests.include("parent");
-openRequests.include("[parent.first_name]");
+openRequests.include("diner");
 openRequests.find({
   
   success: function(results) {
      for (var i = 0; i < results.length; i++) { 
       var object = results[i];
-      var user = object.get("parent");
+      var user = object.get("diner");
       var first_name = user.get("first_name");
       var last_name = user.get("last_name");
       var id = object.id;

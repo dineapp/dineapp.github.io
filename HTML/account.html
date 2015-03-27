@@ -77,8 +77,8 @@ src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
       <label>First Name:</label><h5 class="text" id='first_name'></h5><input type="text" id="edit_fn" class='editing'><br>
       <label>Last Name:</label><h5 class="text" id='last_name'></h5><input type="text" id="edit_ln" class='editing'><br>
       <label>Email:</label><h5 class="text" id='email'></h5><input type="text" id="edit_email" class='editing'><br>
-      <label>Phone Number:</label><h5 class="text" id='phone'></h5><input type="number" id="edit_pn" class='editing'><br>
-      <label>Password:</label><h5 class="text" id='password'>*****</h5><input type="password" id="edit_pass" class='editing'><br>
+      <label>Phone Number:</label><h5 class="text" id='phone'></h5><input type="text" id="edit_pn" class='editing'><br>
+      <label>Password:</label><h5 class="text" id='password'>*****</h5><div id="pass_reset" class="editing btn btn-danger">Reset your Password.</div><br>
       <div id="edit_details" class="btn btn-primary">Edit</div>
       <div id="edit_details1" class="btn btn-primary">Save</div>
      </div>
@@ -95,12 +95,12 @@ src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
 <!-- Modela JS -->
  <script src="../JS/account.js"></script>
 <footer>
-  
-<script type="text/javascript">
-  
+  <script type="text/javascript">
+    analytics.identify(userID, {
+      "name": userFirstName + " " + userLastName ,
+      "email": userEmail,
+    }); 
   </script>
-  
-
 </footer>
-
 </body>
+</html>

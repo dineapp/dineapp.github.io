@@ -19,21 +19,23 @@ var rID;
 var names = [];
 var foods = [];
 var images = [];
-var ids = [];  
+var ids = []; 
+var optName = []; 
+var optId1 = [];
 var optionArray;
 var response;
 var Requests = Parse.Object.extend("Request");
 var User = Parse.Object.extend("User");
 var openRequests = new Parse.Query("Request");
 openRequests.equalTo("objectId", requestID);
-openRequests.include("parent");
+openRequests.include("diner");
 openRequests.include("reservation");
 openRequests.find({
   
   success: function(results) {
      for (var i = 0; i < results.length; i++) { 
       var object = results[i];
-      requestor =  object.get("parent");
+      requestor =  object.get("diner");
       requestorFN = requestor.get("first_name");
       requestorLN = requestor.get("last_name");
       requestorID = requestor.id
@@ -42,7 +44,7 @@ openRequests.find({
       var quiz_results = requestor.get("quizResults");
       var request
       id = object.id;
-      var date = object.get("date");
+      var date = setDate(object.get("date"));
       var party_size = object.get("party_size");
       var time = object.get("time");
       var preferences = object.get("preferences");
@@ -51,20 +53,21 @@ openRequests.find({
       var phone = requestor.get("phone");
       response = object.get("options");
       has_reservation = object.get("reservation");
+      var info =object.get("other_info")
+      var permision = requestor.get("permision")
       
         $("#request").append(
-      "<div class='request'>"+
-      "<h4>"+ date + " " + time + "</h4><h4 id='status'>"+ status +  "</h4>"+
-      "<h4>"+ preferences + "</h4>"+
-      "</div><br>"
-    );
-        $("#user").append(
-      "<div class='request'>"+
-      "<h3 id='name'>" + requestorLN + ", " + requestorFN + "</h3>"+
-      "<h4>"+ requestorM + ", " + phone + "</h4>"+
-      "<h4>"+ quiz_results + "</h4>"+
-      "<br><h4>"+restrictions + "; " + allergies  +"</h4>"+
-      "</div><br>"
+      "<h3>" + id +" - " + requestorLN + ", " + requestorFN + "</h3>"+
+      "<h3><label>Time: </label>"+ "  " + date + ", " + time + "</h3><h3 id='status'><label>Status: </label>"+ "  " + status +  "</h3>"+
+      "<h4><label>Preferences: </label>"+ "  " + preferences + "</h4>"+
+      "<h4><label>Other Info:</label>"+ "  "+ info + "</h4>"+ 
+      "<h4><label>Flavor Preferences:</label>"+ "  " + quiz_results + "</h4>"+
+      "<h4><label>Dietary Restrictions:</label>"+ "  " +restrictions + "</h4>"+
+      "<h4><label>Allergies:</label>"+ "  " +allergies  +"</h4>"+
+      "<h4><label>Email:</label>"+ " " +requestorM + "</h4>"+
+      "<h4><label>Phone:</label><span class='"+permision+"''>"+ " " + phone + "</span></h4>"+
+      
+      "<br>"
     );
 
     if (response == undefined){
@@ -84,23 +87,25 @@ openRequests.find({
         query.containedIn( "objectId" , response);
         query.find({
           success: function(results) {
-              var optName = [];
-              var optId = response;
+              
+             var optId = response;
             for (var i = 0; i < results.length; i++) { 
               var object = results[i];
               optName[i] = object.get("name");
+              optId1[i] = object.id;
       }
 
       $('#reservation').append(
         "<h3>Options:</h3>"+
         "<form id='reservation_creation' onsubmit='return createReservation()'>"+
         "<div  id='"+optName[0]+"_btn'>"+  
-        "<input class='rest_options' name='restaurant' type='radio' id='"+optName[0] +"' value='"+optId[0] +"'>"+optName[0] + "</input></div>"+
+        "<input class='rest_options' name='restaurant' type='radio' id='"+optName[0] +"' value='"+optId1[0] +"'>"+optName[0] + "</input></div>"+
         "<div id='"+optName[1]+"_btn'>"+  
-        "<input class='rest_options' name='restaurant'  type='radio' id='"+optName[1] +"' value='"+optId[1] +"'>"+optName[1] + "</input></div>"+
+        "<input class='rest_options' name='restaurant'  type='radio' id='"+optName[1] +"' value='"+optId1[1] +"'>"+optName[1] + "</input></div>"+
         "<div id='"+optName[2]+"_btn'>"+  
-        "<input class='rest_options' name='restaurant' type='radio' id='"+optName[2] +"' value='"+optId[2] +"'>"+optName[2] + "</input></div>"+
+        "<input class='rest_options' name='restaurant' type='radio' id='"+optName[2] +"' value='"+optId1[2] +"'>"+optName[2] + "</input></div>"+
         "<label>Date:</label><input type='date' id='res_date'>"+
+        "<label>time:</label><input type='time' id='res_time'>"+
         "<label>Party Size:</label><input type='number' id='res_size'>"+
         "<label>Name on Reservation:</label><input type='text' id='res_name'>"+
         "<label>Reservation Source:</label><input type='text' id='res_source'><br>"+
@@ -180,6 +185,8 @@ function getOptions (){
         "requestor_fn": requestorFN,
         "requestor_ln": requestorLN,
         "requestor_email": requestorM,
+        "concierge": userFirstName,
+        "concierge_email": userEmail,
       });
 
       
@@ -218,6 +225,7 @@ function statusChange(){
         "requestor_ln": requestorLN,
         "requestor_email": requestorM,
         "concierge": userFirstName,
+        "concierge_email": userEmail,
         "status": status,
         "request_id": id,
         "id": requestorID,
@@ -265,6 +273,7 @@ function saveOptions(optArray){
     
   success: function(results) {
     results.set("options", optArray);
+    console.log(optArray);
     results.save();
 
     $("reservation_input").remove();
@@ -289,6 +298,8 @@ function createReservation(){
   var size = $("#res_size").val();
   var name = $("#res_name").val();
   var source = $("#res_source").val();
+  var time = $("#res_time").val();
+  var rest_name;
   var restaurant;
   var user;
   var Restaurant = Parse.Object.extend("Restaurant");
@@ -297,6 +308,7 @@ function createReservation(){
   query.first({
     success: function(results) {
       restaurant = results;
+      rest_name = results.get("name")
       var theRestaurant = new Parse.Query("User");
       openRequests.equalTo("objectId", rID);
       openRequests.first({
@@ -306,14 +318,15 @@ function createReservation(){
           var reservation = new Reservation();
 
           reservation.set("restaurant", restaurant);
+          reservation.set("restaurant_name", rest_name);
           reservation.set("request", user);
           reservation.set("date", date);
+          reservation.set("time", time);
           reservation.set("party_size", size);
           reservation.set("platform", source);
           reservation.set("reservation_name", name);
           reservation.set("diner", requestor);
           reservation.set("concierge", currentUser)
-          console.log(size);
           reservation.save(null,{
             success: function(reservation){
               updateStatus("Confirmed");
@@ -323,8 +336,22 @@ function createReservation(){
                 
               success: function(results) {
                 results.set("reservation", reservation);
+                 console.log(reservation);
                 results.save();
-                console.log("save")
+                analytics.track('createReservation', {
+                  "requestor_fn": requestorFN,
+                  "requestor_ln": requestorLN,
+                  "requestor_email": requestorM,
+                  "concierge": userFirstName,
+                  "concierge_email": userEmail,
+                  "restaurant": rest_name,
+                  "date": setDate(date),
+                  "psize":size,
+                  "source":source,
+                  "under":name,
+                  "request_id": id,
+                  "id": requestorID,
+              });
 
               },
                 error: function(error) {
@@ -356,7 +383,14 @@ function createReservation(){
 
 
 
+function setDate (rdate){
+  var dd = rdate.slice(8,10);
+  var mm = rdate.slice(5,7); //January is 0!
+  var yyyy = rdate.slice(0,4);
 
+
+  return rdate = mm+"/"+dd+"/"+yyyy;
+};
  
 
 

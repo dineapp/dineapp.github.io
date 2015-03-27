@@ -1,0 +1,64 @@
+#intro, #phone_permisions{
+	display: none;
+}
+
+.container{
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
+#welcome_all, #phone_permisions, #intro{
+	color: white;
+	text-align: center;
+	position: relative;
+	top: 20%
+}
+
+#into{
+	top: -50%
+}
+.continue {
+	margin: 0 auto;
+	position: relative;
+	margin-top: 30px
+}
+
+
+.content h3{
+	font-weight: 200
+}
+
+input{
+	width: 40px;
+	color: black;
+	border-radius: 2px;
+	border: none;
+	text-align: center;
+}
+
+#phone3{
+	width:60px;
+}
+
+#permision_check{
+	vertical-align: middle;
+	position: relative;
+	width: 100%;
+	line-height: 1em;
+}
+
+#label1{
+	top: -15px;
+	margin-bottom: 10px
+}
+
+#permision{
+	height: 15px;
+	width: 20px;
+	border: 1px solid white;
+	margin-top: 25px;
+}
+
+

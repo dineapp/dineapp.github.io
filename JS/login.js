@@ -33,15 +33,15 @@ $(document).ready(function(){
 		if (email != "") {
 			Parse.User.requestPasswordReset(email, {
 			  success: function() {
-			    $("#password_form").css("display", "none");
-				$("#instructions").css("display", "block");
+			   $(".alerts").append("<p class='alert alert-success alert_text alert-dismissible' role='alert id='invalid_email'> <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>Password reset instructions have been sent to your email.</p>")
+
 			  },
 			  error: function(error) {
-			    $("#reset_instructions").append("<p class='alert_text' id='invalid_email'>Error: " + error.message + "</p>")
+			    $(".alerts").append("<p class='alert alert-danger alert_text alert-dismissible' role='alert id='invalid_email'> <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>Error: " + error.message + "</p>")
 			  }
 			});
 		} else {
-				$("#reset_instructions").append("<p class='alert_text' id='no_email'>Please enter an email address. </p>")
+				$(".alerts").append("<p class='alert_text alert alert-dismissible alert-danger' id='no_email'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>Please enter an email address. </p>")
 		
 		}
 	});
@@ -58,8 +58,11 @@ $(document).ready(function(){
 		var email = $("#register_email").val();
 		var conf_email = $("#confirm_email").val();
 		var password = $("#register_password").val();
-		var phone_number = $("phone_number").val();
-		if (fname != "" & lname != "" & email != "" & conf_email != "" & password != ""  ) {
+		var phone1 = $("phone1").val();
+		var phone2 = $("phone2").val();
+		var phone3 = $("phone3").val();
+		var phone_number = phone1 + phone2 + phone3;
+		if (fname != "" & lname != "" & email != "" & conf_email != "" & password != "" & phone1 != "" & phone2 != "" & phone3 != ""  ) {
 			if (email === conf_email){
 				var user = new Parse.User();
 				user.set("first_name", fname);
@@ -68,7 +71,8 @@ $(document).ready(function(){
 				user.set("password", password);
 				user.set("email", email);
 				user.set("phone_number", phone_number);
-				 
+				user.set("Position", "Diner");
+
 				user.signUp(null, {
 				  success: function(user) {
 				    console.log(user + "was successfully registered")
@@ -87,6 +91,8 @@ $(document).ready(function(){
 			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please fill in your email.</p>")
 		} else if (password === "") {
 			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please fill in your password.</p>")
+		} else if (phone1 === "" || phone2 === "" || phone3 === "" ) {
+			$("#register_box").prepend("<p class='alert_text' id='no_name'>Please check your email.</p>")
 		} 
 		
 	});

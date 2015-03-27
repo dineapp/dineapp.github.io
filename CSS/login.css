@@ -1,0 +1,126 @@
+.background{
+	height: 110%;
+	width: 110%;
+	left: -10%;
+	z-index: 1;
+	position: fixed;
+	top:-10%;
+}
+
+.welcome1, .welcome2{
+	z-index: 100;
+	color: white;
+	font-weight: 400;
+	font-size: 1.5em;
+	  
+}
+
+.welcome1{
+	margin-bottom: 0px;
+	font-size: 3em;
+	font-weight: 700;
+}
+
+.welcome2{
+	margin-top: 0px;
+
+}
+
+.content_box{
+	position: absolute;
+	height: 50%;
+	width: 50%;
+	text-align: center;
+	border-radius: 10px;	
+}
+
+.content_box{
+	z-index: 100;
+	top: 25%;
+	left:25%;
+}
+
+/*Input elements styling*/
+
+input {
+	margin-bottom: 3%;
+	height: 40px;
+	width:300px;
+	border-radius: 5px;
+	opacity: 1;
+	background-color: transparent;
+	border: 3px solid white;
+	font-color:white;
+	text-align: center;
+	color: white
+}
+
+input::-webkit-input-placeholder {
+   color: white;
+   font-size: 1.3em;
+   font-family: Roboto;
+   
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+  color: white;
+   font-size: 1.3em;
+   font-family: Roboto;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+   font-size: 1.3em;
+   font-family: Roboto;  
+}
+
+input:-ms-input-placeholder {  
+   color: white;
+   font-size: 1.3em;
+   font-family: Roboto;  
+}
+
+#register_link, #login_button{
+	width: 150px;
+	height: 40px;
+	vertical-align: middle;
+	font-family: Roboto; 
+	font-size: 1em
+}
+
+#forgotten_password{
+	color: white;
+	margin-top: 10px;
+	text-decoration: underline;
+	font-weight: 300px
+}
+
+/*Register Specific Styling*/
+
+#reg_text{
+	font-size: 1.4em
+}
+
+#register_btn{
+	height: 40px;
+	width: 200px;
+	font-size: 1.3em;
+	background-color: red;
+	border: none;
+	color:white;
+}
+
+#to_login1, #to_login{
+	color: white;
+	text-decoration: underline;
+}
+
+/*email reset specific styling*/
+
+.alerts{
+	z-index: 300;
+	width: 100%;
+	height: 5%;
+	position: absolute;
+	left: 0%;
+}
