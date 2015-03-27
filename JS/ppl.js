@@ -5,3 +5,11 @@ var userFirstName = currentUser.get("first_name");
 var userLastName = currentUser.get("last_name");
 var userID = currentUser.id;
 var created = currentUser.get('createdAt');
+
+
+function getPermision (user) {
+	position = user.get("Position");
+	if (position != "Concierge" || position != "Admin"){
+		window.location.href = "../HTML/app.html"
+	}
+}

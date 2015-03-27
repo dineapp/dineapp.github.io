@@ -1,0 +1,68 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  
+<!-- Homepage CSS -->
+  <link rel="stylesheet" href="../CSS/welcome.css">
+	
+<!-- Parse API -->
+	  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.2.min.js"></script>
+    
+<!-- Backbone and Dependencies-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+ <script type="text/javascript"
+src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
+<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+  analytics.load("82AGlsRbRM");
+  analytics.page()
+  }}();
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="background"></div>
+  <div id="welcome_all">
+    <div class="header">
+      <h1 id="welcome"> Welcome to DINE!</h1>
+    </div>
+    <div class="content">
+      <h3> We are excited to help you take your dining experience to the next level, but first we are going to need some information from you to help us make your experience the best it can be.</h3>
+    </div>
+    <div class="continue">
+      <div id="continue-btn" class="btn btn-primary">Continue</div>
+    </div>
+  </div>
+  <div id='phone_permisions'>
+    <h3>How can we contact you?</h3>
+    <label>Phone Number:</label>
+    <input type="text" id="phone1" name='phone1' placeholder="(XXX)" maxlength="3"> - 
+    <input type="text"  id="phone2" name='phone2' placeholder="XXX" maxlength="3"> - <input type="text"  id="phone3" name='phone3' placeholder="XXXX" maxlength="4">
+    <h6> In order to expedite the process, our concierges would like to contact you via sms to update you on the progress of your <br>request and to communicate with you quicker. WE WILL NEVER SHARE YOUR PHONE NUMBER WITH UNAURTHORIZED 3RD PARTIES <br>OR SEND YOU MARKETING MATERIALS VIA SMS.</h6>
+    <div id="permision_check">
+      <input type='checkbox' value="permision" id="permision" checked><label id="label1">I give you permision to contact me via sms.</label> 
+    </div>
+      <div class="btn btn-primary" id="phone_submit">Submit</div>
+  </div>
+  <div id="intro">
+      <h3> Now that we know your name and how to contact you, we need to know a little bit <br>about what you like and dislike so that we can provide the best dining experience possible.</h3>
+      <div class="btn btn-primary" id="continue2">Continue <span class="glyphicon glyphicon-chevron-right"></span></div>
+  </div>
+</div>
+
+<script src="../js/welcome.js"></script>
+
+<footer>
+  <script src="../JS/ppl.js"></script>
+  <!--<script type="text/javascript">
+    analytics.identify(userID, {
+      "name": userFirstName + " " + userLastName ,
+      "email": userEmail,
+    }); 
+  </script>-->
+</footer>
+</body>
+</html>

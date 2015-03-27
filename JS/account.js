@@ -20,7 +20,7 @@ $("#edit_fn").val(userFirstName);
 $("#edit_ln").val(userLastName);
 $("#edit_email").val(userEmail);
 $("#edit_pn").val(Phone)
-$("#edit_pass").attr("placeholder","******")
+
 
 
 $("#edit_details").click(function(){
@@ -34,14 +34,13 @@ $("#edit_details1").click(function(){
   var update_lname = $("#edit_ln").val();
   var update_email = $("#edit_email").val();
   var update_phone = $("#edit_pn").val();
-  var update_pass = $("#edit_pass").val();
 
   currentUser.set("first_name", update_fname);
   currentUser.set("last_name", update_lname);
   currentUser.set("email", update_email);
   currentUser.set("username", update_email);
-  //currentUser.set("phone", update_phone);
-  currentUser.set("password",update_pass)
+  currentUser.set("phone", update_phone);
+
   currentUser.save(null,{
     success: function(user){
      location.reload()
@@ -51,9 +50,19 @@ $("#edit_details1").click(function(){
   }
   })
 })      
+});
 
-}
-
-);
+$("#pass_reset").click(function(){
+  console.log("click");
+  Parse.User.requestPasswordReset(userEmail, {
+        success: function() {
+        $(".details").prepend("<div class='alert alert-success' role='alert'>Password reset instructions have been sent to your email.</div>")
+        },
+        error: function(error) {
+          $("#reset_instructions").append("<p class='alert_text' id='invalid_email'>Error: " + error.message + "</p>")
+        }
+      });
+    
+})
 
 
