@@ -7,6 +7,8 @@ var userLastName = currentUser.get("last_name");
 var userID = currentUser.id;
 var created = currentUser.get('createdAt');
 var rdate;
+var rmonth;
+var rday;
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
@@ -24,21 +26,26 @@ today = yyyy+"-"+mm+"-"+dd;
 var Restaurant = Parse.Object.extend("Request");
 var query = new Parse.Query(Restaurant);
 query.equalTo("diner", currentUser);
-query.notEqualTo("status","Completed");
-query.greaterThanOrEqualTo("date", today)
+query.notEqualTo("status","Confirmed");
+query.greaterThanOrEqualTo("date", today);
+query.ascending("date");
 query.find({
   success: function(results) {
     // Do something with the returned Parse.Object values
     for (var i = 0; i < results.length; i++) { 
       var object = results[i];
       rdate = object.get("date");
-       
+      var status = object.get("status");
+      var id = object.id;
 
         var day = setDate(rdate);
       $(".request_column").append(
-        "<div class='trending_card'>"+
-        "<h3 class='res_name'>"+ day +  " - " + object.get("status") +
-        "</h3></div>"
+        "<a href='request.html?" + id +"'>"+
+        "<div class='request_card'>"+
+        "<div class='date'>"+"<h3 class='month'>"+ day[0] +"</h3>"+
+        "<h2 class='day'>"+day[1]+"</h2></div>"+
+        "<div class='status "+status+"'><h4 class='status_text'>"+status+"</h4></div>"+
+        "</div></a>"
         )
     }
   },
@@ -59,15 +66,19 @@ query.find({
       var object = results[i];
       var restaurant = object.get("restaurant");
       var restaurant_name = restaurant.get("name");
+      var rpicture = restaurant.get("picture")
       var restaurant_id = restaurant.id
       var object = results[i];
       rdate = object.get("date");
       
         var day = setDate(rdate);
       $(".reservation_column").append(
-        "<div class='trending_card'>"+
-        "<h3 class='res_name'>"+ day + " - <a href='../HTML/restaurant.html?" + restaurant_id +"'>"+ restaurant_name+ "</a>"+ 
-        "</h3></div>"
+        "<a href='restaurant.html?" + restaurant_id +"'>"+
+        "<div class='reservation_card'>"+
+         "<div class='restaurant'><img class='rpic' src='"+ rpicture+"'><h4 class='name'>"+restaurant_name+"</h4></div>"+
+        "<div class='date1'>"+"<h4 class='month1'>"+ day[0] +"</h4>"+
+        "<h3 class='day1'>"+day[1]+"</h3></div>"+
+        "</div></a>"
         )
     }
   },
@@ -82,8 +93,48 @@ function setDate (rdate){
   var mm = rdate.slice(5,7); //January is 0!
   var yyyy = rdate.slice(0,4);
 
+  switch (mm) {
+    case "01":
+        mm = "January";
+        break;
+    case "02":
+        mm = "February";
+        break;
+    case "03":
+        mm = "March";
+        break;
+    case "04":
+        mm = "April";
+        break;
+    case "05":
+        mm = "May";
+        break;
+    case "06":
+        mm = "June";
+        break;
+    case "07":
+        mm = "July";
+        break;
+    case "08":
+        mm = "August";
+        break;
+    case "09":
+        mm = "September";
+        break;
+    case "10":
+        mm = "October";
+        break;
+    case "11":
+        mm = "November";
+        break;
+    case "12":
+        mm = "December";
+        break;
+}
+  rmonth = mm;
+  rday = dd;
 
-  return rdate = mm+"/"+dd+"/"+yyyy;
+  return [mm, dd]
 };
 
 $(".name").text(name);

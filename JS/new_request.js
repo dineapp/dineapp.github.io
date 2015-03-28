@@ -31,8 +31,8 @@ $("#rdate").attr("min", minDate);
 function requesting(){
 	rdate = $("#rdate").val();
 	rppl = $("#rppl").val();
-	rtime1 = Number($("#time1").val());
-	rtime2 = Number($("#time2").val());
+	rtime1 = $("#time1").val();
+	rtime2 = $("#time2").val();
 	rtime= rtime1 + "-" + rtime2;
 
 		if (rtime1 > rtime2 || rtime2 < rtime1 + 2) {

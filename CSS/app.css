@@ -1,0 +1,139 @@
+body{
+  text-align: center;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  left: -5%;
+  z-index: 1;
+}
+
+.container{
+	overflow-y: scroll;
+}
+
+
+
+.new{
+	color: white;
+	font-size: .6em;
+	vertical-align: middle;
+}
+
+.new:hover{
+	color: red
+}
+
+.title{
+	font-family: "Roboto";
+	font-weight: 300;
+	color: white
+
+}
+.request_column, .reservation_column{
+	display: flex;
+	flex-flow: row wrap;
+  	justify-content: center;
+ 
+  	
+}
+
+.request_card, .reservation_card{
+	border:2px solid black;
+	background-color:white;
+	width: 120px;
+	height: 130px;
+	text-align: center;
+	margin: 10px;
+	padding: none;
+
+}
+
+a, a:hover{
+	color: black;
+	text-decoration: none
+}
+
+.date{
+	height: 62%
+}
+
+.month, .month1{
+	color: red;
+	margin-top: 5px;
+	font-size: 20px;
+	font-weight: 400
+}
+
+.day, .day1{
+	font-weight: 700;
+	font-size: 40px;
+	margin-top: -2px
+}
+
+.status{
+	border-top: 2px solid black;
+	margin: none;
+	height: 34%
+}
+
+.status_text{
+	margin: none;
+}
+.pending{
+	
+	background-color: #CF000F;
+	color: white
+}
+
+.received{
+	background-color: #F9BF3B;
+	color: white
+}
+
+.completed{
+	background-color: #1BBC9B;
+	color: white
+}
+
+.request_card:hover{
+	opacity: .3
+}
+/*
+.request_card:hover,  .request_card:hover .month, .request_card:hover .status{
+	background-color: black;
+	color:white;
+}
+
+.request_card:hover .status{
+	border-top: 2px solid white}
+*/
+.reservation_card{
+	height:200px;
+	width: 240px
+}
+
+.rpic{
+	width: 100%;
+	height: 60%;
+	z-index: 1;
+}
+
+.name{
+	position: relative;
+	z-index: 5;
+	color: white;
+	margin-top: -30px;
+	font-weight: 100
+}
+
+.month1{
+	font-size: 1.9em;
+	margin-top: 15px;
+	margin-bottom: 0px
+	}
+
+.reservation_card:hover{
+	opacity: .3
+}
+
+

@@ -1,0 +1,170 @@
+body{
+  text-align: center;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  left: -5%;
+  z-index: 1;
+  color: white;
+  font-weight: 200;
+}
+
+.home{
+	color: white;
+	font-size: 1.3em;
+	margin-top: 10px
+}
+
+ a:hover .home{
+	color: blue;
+	text-decoration: underline;
+}
+
+.date{
+	position:relative;
+	border:2px solid black;
+	background-color:white;
+	width: 110px;
+	height: 110px;
+	text-align: center;
+	margin: 0 auto;
+	padding: none;
+	
+	margin-bottom: 10px
+	
+}
+
+.mdiv{
+	border-bottom: 2px solid black;
+	background-color: red;
+	color: white;
+	height:40%;
+	vertical-align: middle;
+	padding-top: 10px
+}
+
+.month{
+	margin-top:0px;
+	margin-bottom: 0px;
+
+}
+
+.day{
+	font-size: 3.5em;
+	margin-top: 10px;
+	color: black
+}
+
+.top{
+	width: 100%;
+	height: 23%;
+	 
+}
+
+.day_box{
+	width:20%;
+	height: 100%;
+	float: left;
+	 
+}
+
+.status{
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 2%
+
+	
+}
+
+.other_stuff{
+	margin-top: 20px;
+	position: relative;
+	float: none
+}
+
+.display2, .save{
+	display: none
+} 
+
+.save{
+	margin-top: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#size2{
+	width:30px;
+	color: black;
+	text-align: center;
+	margin-bottom: 30px
+}
+
+.picture img{
+	height: 120px;
+	width: 120px
+}
+
+.img{
+	border: 2px solid white
+}
+
+.concierge_info{
+	text-align: center;
+	position: relative;
+}
+
+.concierge{
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 20px;
+	width: 40%
+}
+
+.option_info{
+	display: flex;
+	flex-flow: row wrap;
+  	justify-content: center;
+}
+
+.b1{
+	height: 200px;
+	width: 200px;
+	text-align: center;
+}
+
+.restaurant {
+	height: 150px;
+	width: 150px;
+	position: relative;
+	color: white;
+	z-index: 1;
+	margin: 0 auto;
+
+}
+
+.restaurant-img{
+border: 2px solid white
+}
+
+.rname{
+	z-index: 5;
+	position: relative;
+	top: -50%;
+	font-weight: 100
+}
+
+.option_info a {
+	color: white;
+	text-decoration: none;
+}
+
+.b1:hover{
+	opacity: .6;}
