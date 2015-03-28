@@ -4,12 +4,7 @@
 	width: 100%;
 	z-index: 1;
 	color: white;
-	font-family: "Roboto";
-	font-weight: 300
-}
-
-h1{
-	text-align: center;
+	font-weight: 100px;
 }
 
 .container input{
@@ -17,12 +12,62 @@ h1{
 }
 
 .other{
-	height:30px;
-	width: 200px;
+	height:25px;
+	width: 150px;
+}
+
+#dietary_restrictions{
+	position: relative;
+	padding-left: 25%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	font-color: white;
+	font-size: 18;
+	border-radius: 1px;
+	border: 1px solid white;
+	text-align: center;
+}
+
+#restrictions_div{
+	display: flex;
+	flex-direction: row;
+}
+
+.dddiv{
+	margin: 100px;
+	margin-bottom: 10px;
+}
+
+#restrictions_title{
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 50;
+	font-weight: 300;
+	padding-top: 2%;
+}
+
+#restrictions_subtitle{
+	font-size: 25;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	text-indent: 5%;
+}
+
+#allergies_title{
+	font-size: 25;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	text-indent: 5%;
 }
 
 #restrictions_submit{
-	margin-top: 10px
+	position: relative;
+	top: 30%;
+	font-family: 'Lato', sans-serif;
+	font-size: 15;
+	width:200px;
+	left: -15%
+
 }
 
 .abox, .qbox, #new_user{

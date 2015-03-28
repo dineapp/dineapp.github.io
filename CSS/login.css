@@ -1,4 +1,5 @@
 .background{
+	opacity: .70;
 	height: 110%;
 	width: 110%;
 	left: -10%;
@@ -17,12 +18,15 @@
 
 .welcome1{
 	margin-bottom: 0px;
-	font-size: 3em;
-	font-weight: 700;
+	font-size: 55;
+	font-weight: 200;
 }
 
 .welcome2{
 	margin-top: 0px;
+	font-size: 20;
+	font-weight: 100px;
+	font-style: italic;
 
 }
 
@@ -31,13 +35,22 @@
 	height: 50%;
 	width: 50%;
 	text-align: center;
-	border-radius: 10px;	
+	border-radius: 10px;
+	border-width: 1px;	
 }
 
 .content_box{
 	z-index: 100;
 	top: 25%;
 	left:25%;
+}
+
+#login_email{
+	border-width: 2px;
+}
+
+#login_password{
+	border-width: 2px;
 }
 
 /*Input elements styling*/
@@ -47,6 +60,7 @@ input {
 	height: 40px;
 	width:300px;
 	border-radius: 5px;
+	border-width: 1px;
 	opacity: 1;
 	background-color: transparent;
 	border: 3px solid white;
@@ -57,35 +71,36 @@ input {
 
 input::-webkit-input-placeholder {
    color: white;
+   opacity: .8;
    font-size: 1.3em;
-   font-family: Roboto;
+   font-family: Raleway;
    
 }
 
 input:-moz-placeholder { /* Firefox 18- */
   color: white;
    font-size: 1.3em;
-   font-family: Roboto;
+   font-family: Raleway;
 }
 
 input::-moz-placeholder {  /* Firefox 19+ */
    color: white;
    font-size: 1.3em;
-   font-family: Roboto;  
+   font-family: Raleway;  
 }
 
 input:-ms-input-placeholder {  
    color: white;
    font-size: 1.3em;
-   font-family: Roboto;  
+   font-family: Raleway;  
 }
 
 #register_link, #login_button{
 	width: 150px;
 	height: 40px;
 	vertical-align: middle;
-	font-family: Roboto; 
-	font-size: 1em
+	font-family: Raleway;
+	font-size: 18;
 }
 
 #forgotten_password{
@@ -112,6 +127,7 @@ input:-ms-input-placeholder {
 
 #to_login1, #to_login{
 	color: white;
+	padding-top: 2%;
 	text-decoration: underline;
 }
 
@@ -123,4 +139,14 @@ input:-ms-input-placeholder {
 	height: 5%;
 	position: absolute;
 	left: 0%;
+}
+
+#reset_button{
+	opacity: .9;
+	height: 35px;
+	width: 100px;
+	font-size: 1.3em;
+	background-color: black;
+	border: none;
+	color:white;
 }
