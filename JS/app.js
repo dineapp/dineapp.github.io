@@ -139,9 +139,9 @@ function setDate (rdate){
 
 $(".name").text(name);
 
-$(".take_quiz").click(function(){
-  window.location.href = "restrictions.html";
-});
-$(".new_menu").click(function(){
-  window.location.href = "new_request.html";
-});
+$(".logout").click(function(){
+  Parse.User.logOut();
+  console.log("logout");
+  window.location.href ="../index.html"
+})
+

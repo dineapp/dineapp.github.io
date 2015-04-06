@@ -7,6 +7,8 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
   
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,100italic,300italic,400italic' rel='stylesheet' type='text/css'>
 <!-- Homepage CSS -->
   <link rel="stylesheet" href="../CSS/quiz.css">
   
@@ -34,7 +36,8 @@ query.find({
       $("#A"+i).text(object.get("ansA"));
       $("#B"+i).text(object.get("ansB"));
       $("#C"+i).text(object.get("ansC"));
-      $("#D"+i).text(object.get("ansD"))
+      $("#D"+i).text(object.get("ansD"));
+      $("#E"+i).text(object.get("ansE"))
       
 
     }
@@ -55,6 +58,9 @@ query.find({
       <h1 id="q2" class="quest"></h1>
       <h1 id="q3" class="quest"></h1>
       <h1 id="q4" class="quest"></h1>
+      <h1 id="q5" class="quest"></h1>
+      <h1 id="q6" class="quest"></h1>
+      <h1 id="q7" class="quest"></h1>
 		</div>
 		<div class="abox" id="abox0">
       <div id="A0" class='ansA btn btn-default ans ans0'>
@@ -65,6 +71,8 @@ query.find({
       </div>
       <div id='D0' class='ansD btn btn-default ans ans0'>
       </div>
+      <div id='E0' class='ansD btn btn-default ans ans0'>
+      </div>
       <div id='A1' class='ansA btn btn-default ans  ans1'>
       </div>
       <div id='B1' class='ansB btn btn-default ans ans1'>
@@ -72,6 +80,8 @@ query.find({
       <div id='C1' class='ansC btn btn-default ans ans1'>
       </div>
       <div id='D1' class='ansD btn btn-default ans ans1'>
+      </div>
+      <div id='E1' class='ansD btn btn-default ans ans1'>
       </div>
       <div id='A2' class='ansA btn btn-default ans ans2'>
       </div>
@@ -81,6 +91,8 @@ query.find({
       </div>
       <div id='D2' class='ansD btn btn-default ans ans2'>
       </div>
+      <div id='E2' class='ansD btn btn-default ans ans2'>
+      </div>
       <div id='A3' class='ansA btn btn-default ans ans3'>
       </div>
       <div id='B3' class='ansB btn btn-default ans ans3'>
@@ -88,6 +100,8 @@ query.find({
       <div id='C3' class='ansC btn btn-default ans ans3'>
       </div>
       <div id='D3' class='ansD btn btn-default ans ans3'>
+      </div>
+      <div id='E3' class='ansD btn btn-default ans ans3'>
       </div>
       <div id='A4' class='ansA btn btn-default ans ans4'>
       </div>
@@ -97,6 +111,48 @@ query.find({
       </div>
       <div id='D4' class='ansD btn btn-default ans ans4'>
       </div>
+      <div id='E4' class='ansD btn btn-default ans ans4'>
+      </div>
+      <div id="A5" class='ansA btn btn-default ans ans5'>
+      </div>
+      <div id='B5' class='ansB btn btn-default ans ans5'>
+      </div>
+      <div id='C5' class='ansC btn btn-default ans ans5'>
+      </div>
+      <div id='D5' class='ansD btn btn-default ans ans5'>
+      </div>
+      <div id='E5' class='ansD btn btn-default ans ans5'>
+      </div>
+      <div id='A6' class='ansA btn btn-default ans  ans6'>
+      </div>
+      <div id='B6' class='ansB btn btn-default ans ans6'>
+      </div>
+      <div id='C6' class='ansC btn btn-default ans ans6'>
+      </div>
+      <div id='D6' class='ansD btn btn-default ans ans6'>
+      </div>
+      <div id='E6' class='ansD btn btn-default ans ans6'>
+      </div>
+      <div id='A7' class='ansA btn btn-default ans ans7'>
+      </div>
+      <div id='B7' class='ansB btn btn-default ans ans7'>
+      </div>
+      <div id='C7' class='ansC btn btn-default ans ans7'>
+      </div>
+      <div id='D7' class='ansD btn btn-default ans ans7'>
+      </div>
+      <div id='E7' class='ansD btn btn-default ans ans7'>
+      </div>
+      <!--<div id='A8' class='ansA btn btn-default ans ans8'>
+      </div>
+      <div id='B8' class='ansB btn btn-default ans ans8'>
+      </div>
+      <div id='C8' class='ansC btn btn-default ans ans8'>
+      </div>
+      <div id='D8' class='ansD btn btn-default ans ans8'>
+      </div>
+      <div id='E8' class='ansD btn btn-default ans ans8'>
+      </div>-->
   </div>
   <div id='new_user'>
     <h3>Now that you've told us all about what you like and dislike,<br> let's tell a concierge that you're ready to eat out!<h3>
@@ -104,7 +160,7 @@ query.find({
     <a id="skip"href="app.html">Skip</a>
 </div>
 <style type="text/css">
-  .ans1, .ans2, #q1, #q2, .ans3, .ans4, #q3, #q4, #new_user{
+  .ans1, .ans2, .ans3, .ans4, .ans5, .ans6, .ans7, .ans8, #q1, #q2, #q3, #q4,#q5, #q6, #q7, #q8, #new_user{
     display: none;
   }
 </style>

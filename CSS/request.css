@@ -168,3 +168,7 @@ border: 2px solid white
 
 .b1:hover{
 	opacity: .6;}
+
+.stage2, .stage3{
+	display: none
+}

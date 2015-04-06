@@ -25,11 +25,13 @@ openRestaurants.find({
       	var size = object.get("party_size");
       	var time = object.get("time");
       	concierge = object.get("concierge");
+        if (concierge != undefined){
       	concierge_fname = concierge.get("first_name");
       	concierge_email = concierge.get("email");
       	concierge_picture = concierge.get("picture");
       	concierge_phone = concierge.get("phone");
       	concierge_name = concierge.get("first_name") + " "+ concierge.get("last_name");; 
+      }
       	var options = object.get("options");
       	var preferences = object.get("preferences");
       	var other = object.get("other_info")
@@ -117,20 +119,39 @@ openRestaurants.find({
 
 
 $(".cancel").click(function(){
-	request.destroy({
-  success: function(myObject) {
-  	analytics.track("request_deleted",{
-				"requestID": requestID,
-				"concierge_email":concierge_email	
-			});
-    window.location.href = "app.html"
-  },
-  error: function(myObject, error) {
-  	console.log(error)
 	
-	  }
-});
-})
+    swal({   
+      title: "Confirm?",   
+      text: "Are you sure you want to cancel this request?",   
+      type: "warning", 
+      showCancelButton: "true",
+      showConfirmButton: "true", 
+      confirmButtonText: "Don't Cancel",
+      cancelButtonText: "Yes",
+      confirmButtonColor: "#CF000F",
+      cancelButtonColor: "#26A65B"
+       },
+       function(isConfirm){   
+          if (!isConfirm) {
+
+            request.destroy({
+              success: function(myObject) {
+                analytics.track("request_deleted",{
+                    "requestID": requestID,
+                    "concierge_email":concierge_email 
+                  });
+              window.location.href = "app.html"
+              },
+              error: function(myObject, error) {
+               console.log(error)
+        
+              }
+            });
+          };
+        }
+    );
+  })
+
 
 $(".edit").click(function(){
 	$('.display1').css("display","none");
@@ -237,10 +258,13 @@ function statusText(status){
 	        break;
 	    case "Received":
 	        status_txt = "You're on your way to a great dining experience!  Yumm!";
-	        break;
+	        $(".stage2").css("display","inline");
+          break;
 	    case "Completed":
 	        status_txt =  "We've has found some great options for you! Check them out and let <span class='con_name'></span> know which looks the best, and they'll make a reservation for you.";
-	        break;
+	        $(".stage2").css("display","inline");
+          $(".stages").css("display","inline");
+          break;
 	    	}
 	    	
 	        return status_txt

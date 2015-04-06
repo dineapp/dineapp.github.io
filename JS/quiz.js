@@ -4,6 +4,9 @@ var ans1;
 var ans2;
 var ans3;
 var ans4;
+var ans5;
+var ans6;
+var ans7;
 var ansArray;
 var userID;
 var currentUser = Parse.User.current();
@@ -44,8 +47,40 @@ $(".ans3").click(function(){
 
 $(".ans4").click(function(){
 	ans4 =" " +  $(this).text();
+	$(".ans4").css("display","none");
+	$("#q4").css("display","none");
+	$(".ans5").css("display","inline");
+	$("#q5").css("display","inline");
+});
+
+$(".ans5").click(function(){
+	ans5 =" " +  $(this).text();
+	$(".ans5").css("display","none");
+	$("#q5").css("display","none");
+	$(".ans6").css("display","inline");
+	$("#q6").css("display","inline");
+});
+
+$(".ans6").click(function(){
+	ans6 =" " +  $(this).text();
+	$(".ans6").css("display","none");
+	$("#q6").css("display","none");
+	$(".ans7").css("display","inline");
+	$("#q7").css("display","inline");
+});
+
+/*$(".ans7").click(function(){
+	ans7 =" " +  $(this).text();
+	$(".ans7").css("display","none");
+	$("#q7").css("display","none");
+	$(".ans8").css("display","inline");
+	$("#q8").css("display","inline");
+});*/
+
+$(".ans7").click(function(){
+	ans7 =" " +  $(this).text();
 	
-	ansArray = [ans0, ans1, ans2, ans3, ans4];
+	ansArray = [ans0, ans1, ans2, ans3, ans4, ans5, ans6, ans7];
 	currentUser.set("quizResults",ansArray);
 	currentUser.save(null, {
 		success: function(user) {

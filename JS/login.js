@@ -76,7 +76,7 @@ $(document).ready(function(){
 				user.signUp(null, {
 				  success: function(user) {
 				    console.log(user + "was successfully registered")
-				    window.location.href = "../HTML/app.html";
+				    window.location.href = "../HTML/welcome.html";
 				  },
 				  error: function(user, error) {
 				    $("#register_box").prepend("<p class='alert_text' id='invalid_email'>Error: " + error.message + "</p>")
