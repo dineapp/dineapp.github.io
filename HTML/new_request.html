@@ -28,10 +28,7 @@
   <div class="restaurant_home">
     
     <form id="request_input" onsubmit="return requesting()">
-       <h4 id="message" class="rquest">Let us know how many people you are dining with, when, and a little bit about the occasion<br> and a concierge will help you take the experience to the next level.</h4>
-      <label>Number of People:  </label><input type="number" id="rppl" required>
-      <label>Date:</label><input type="date" id="rdate" required>
-      <label>Time Range</label>
+      <h4 id='sentence'> I'm looking for a table on <input type="date" id="rdate" required> between
       <select id="time1">
         <option value="4:00">4:00 PM</option>
         <option value="4:30">4:30 PM</option>
@@ -59,7 +56,7 @@
         <option value="9:30">9:30 PM</option>
         <option value="10:00">10:00 PM</option>
         <option value="10:30">10:30 PM</option>
-      </select><br>
+      </select> for  <input type="number" id="rppl" required> people.<br></h4>
       <button id="rsubmit" class="btn btn-default" type="submit">Let's Dine!</button>
     </form>
   </div>
@@ -141,8 +138,7 @@ query.find({
       </div>
       <div id='rD4' class='ransD btn btn-default rans rans4'>
       </div>
-    </div>
-    <div class="rabox" id="rabox5">
+      <div class="obox" id="rabox5">
       <h3 class="rquest">Anything else you want to tell your concierge?</h3>
         <input type="text" id="other-inpt"><br>
         <div id="submit" class="btn btn-primary">Submit Request</div>
@@ -152,6 +148,9 @@ query.find({
       <a class="confirm" href="app.html"><div class="confirm btn btn-primary"><span class="glyphicon glyphicon-home"></span>  Home</div></a><a class="confirm" href="new_request.html"><div class="confirm btn btn-primary"><span class="glyphicon glyphicon-plus"></span>  New Request</div></a>
       
     </div>
+    </div>
+    
+    
   </div>
 </div>
 

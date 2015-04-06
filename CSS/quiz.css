@@ -104,6 +104,13 @@
 	margin-left: 20px
 }
 
+#sentence{
+	font-family: 'Roboto';
+	font-weight: 100;
+	font-size: 4em!important;
+	line-height: 2em
+}
+
 .abox{
 	height: 30%;
 	display: flex;
@@ -121,6 +128,14 @@
 	color: white;
 	font-size:1.5em;
 	font-family: 'Lato' sans-serif;
-	padding-bottom: 29px
+	padding-bottom: 9px
 }
+
+.ans:hover{
+	background-color: white;
+	font-size:1.5em;
+	font-family: 'Lato' sans-serif;
+}
+
+
 

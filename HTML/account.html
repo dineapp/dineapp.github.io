@@ -41,7 +41,7 @@ src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">DINE</a>
+          <a class="navbar-brand" href="app.html">DINE</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,9 +55,8 @@ src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="name"></span> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">New Reservation</a></li>
-                <li><a href="#">View Menus</a></li>
-                <li><a href="#">My Flavor Profile</a></li>
+                <li><a href="new_request.html">New Request</a></li>
+                <li><a href="restrictions.html">My Flavor Profile</a><li>
                 <li class="divider"></li>
                 <li class="logout"><a class="logout">Log Out</a></li>
               </ul>
@@ -100,6 +99,12 @@ src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
       "name": userFirstName + " " + userLastName ,
       "email": userEmail,
     }); 
+
+    $(".logout").click(function(){
+  Parse.User.logOut();
+  console.log("logout");
+  window.location.href ="../index.html"
+})
   </script>
 </footer>
 </body>

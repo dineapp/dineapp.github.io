@@ -86,7 +86,7 @@ $(".rans4").click(function(){
 	rans4 = " " + $(this).text();
 	$(".rans4").css("display","none");
 	$("#rq4").css("display","none");
-	$("#rabox5").css("display","inline");
+	$(".obox").css("display","block");
 });
 
 $("#submit").click(function(){
