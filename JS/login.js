@@ -75,7 +75,11 @@ $(document).ready(function(){
 
 				user.signUp(null, {
 				  success: function(user) {
-				    console.log(user + "was successfully registered")
+				    analytics.track("register",{
+				"first_name": fname,
+				"last_name": lname,
+				"email": email,
+			});
 				    window.location.href = "../HTML/welcome.html";
 				  },
 				  error: function(user, error) {

@@ -1,5 +1,10 @@
 Parse.initialize("RnRYjP71R4vP3HiQoApoBIYK6WZbqre87TLSMFtv", "euBHIslJrC2Xa5y0tuJNl1iVZTPXmGBqcKyyga6j");
 var currentUser = Parse.User.current();
+if (currentUser == undefined){
+  $(".dropdown").css("display","none");
+  $(".title").css("display","none");
+  $(".container").append("<a class='login' href='../index.html'><h1 class='login-div t1'>Please <span class='link'>login</span> to see your requests and reservations.</h1></a>")
+}else{
 var name = currentUser.get("first_name");
 var userEmail = currentUser.get("email");
 var userFirstName = currentUser.get("first_name");
@@ -13,7 +18,7 @@ var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
 var yyyy = today.getFullYear();
-
+}
 if(dd<10) {
     dd='0'+dd
 } 

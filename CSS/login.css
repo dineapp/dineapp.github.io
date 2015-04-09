@@ -139,6 +139,7 @@ input:-ms-input-placeholder {
 	height: 5%;
 	position: absolute;
 	left: 0%;
+	color: white
 }
 
 #reset_button{
@@ -149,4 +150,8 @@ input:-ms-input-placeholder {
 	background-color: black;
 	border: none;
 	color:white;
+}
+
+.alert_text{
+	color: white
 }

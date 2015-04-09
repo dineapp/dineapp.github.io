@@ -23,10 +23,21 @@ body{
 	color: red
 }
 
-.title{
+.t1{
 	font-family: "Roboto";
 	font-weight: 300;
 	color: white
+
+}
+
+.login-div{
+	margin-top: 15%;
+	position: relative;
+}
+
+.link{
+	text-decoration: underline;
+	color: #0645AD
 
 }
 .request_column, .reservation_column{
