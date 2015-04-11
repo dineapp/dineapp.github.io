@@ -33,7 +33,11 @@ openRestaurants.find({
       	$("#raddress2").text(address2);
       	$("#rdesc").text(desc);
         $("#rphone").text(rphone);
-        $("#rmenu").attr("href",rweb);
+
+        $(".infobox").append(
+            "<a target='_blank' href='"+rmenu+"' id='rmenu'>Menu <span class='glyphicon glyphicon-new-window'></span></a>"+ 
+            "<a target='_blank' href='"+rweb+"' id='rmenu'>Website <span class='glyphicon glyphicon-new-window'></span></a>"
+          )
       }},
       error: function(error){
       	console.log(error);

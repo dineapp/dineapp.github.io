@@ -37,11 +37,45 @@
 	z-index: 2;
 	height: 100%;
 	width: 100%;
-	top: 0%
+	top: 0%;
+	overflow: scroll;
 }
 
 .rtext{
 	opacity: 1;
 	z-index: 300;
 	font-weight: 500
+}
+
+#rmenu, #rweb{
+	margin: 7px
+}
+
+#rdesc{
+	font-size: 1.4em
+}
+
+#rline3{
+	font-size: 1.3em
+}
+
+#raddress1, #raddress2{
+	font-size: 1.2em
+}
+
+#rphone{
+	font-size: 1.2em
+}
+
+.rtext{
+	margin-bottom: 15px
+}
+
+#raddress1{
+	margin-bottom: -7px
+}
+
+#rname{
+	font-size: 4em;
+
 }
