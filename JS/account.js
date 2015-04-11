@@ -7,7 +7,7 @@ var userLastName = currentUser.get("last_name");
 var userID = currentUser.id;
 var username = currentUser.username;
 var Phone = currentUser.get("phone")
-var interPhone = currentUser.get("phone").toString()
+var interPhone = currentUser.get("phone")
 var userPhone = interPhone.substr(0,3) + "-" + interPhone.substr(3,3)+ "-" + interPhone.substr(6,7)
 
 

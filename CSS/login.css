@@ -153,5 +153,6 @@ input:-ms-input-placeholder {
 }
 
 .alert_text{
-	color: white
+	color: white;
+	font-size: 1.8em;
 }

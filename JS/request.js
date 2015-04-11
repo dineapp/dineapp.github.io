@@ -104,7 +104,8 @@ openRestaurants.find({
 				      	var pic = object.get("picture");
 				      	var name = object.get("name");
 				      	var id = object.id
-							$(".option_info").append(
+                $(".stage3").css("display","inline");
+							$(".sub-options").append(
                   "<a href='restaurant.html?"+id+"'><div class='b1'>"+
 									"<div class='restaurant'><img class='restaurant restaurant-img img-circle' src='"+pic+"'>"+
 									"</div><h3 class='rname'>"+name+"</h3></div></a>"

@@ -105,14 +105,18 @@ $("#submit").click(function(){
 
 	request.save(null, {
 		success: function(request) {
+			currentUser.increment("requests");
+			currentUser.save();
 			analytics.track("new_request",{
 				"date": rdate,
 				"time": rtime,
 				"party_size": rppl,
 				"other_info":other,
 				"preferences": rAnswerArray,
-				"status": "Pending"
+				"status": "Pending",
+				"user's requests": currentUser.get("requests")
 			});
+		
     	$("#rabox5").css("display","none");
     	$(".confirmation").css("display","inline");
   },
