@@ -22,7 +22,9 @@ openRestaurants.find({
       	var address2 = object.get("Address2");
       	var price = object.get("price_range");
       	var desc = object.get("description");
-
+        var rphone= object.get("phone");
+        var rmenu = object.get("menu_url");
+        var rweb = object.get("website");
 
       	$("#rname").text(name);
       	$(".background").attr("src",img_src);
@@ -30,7 +32,8 @@ openRestaurants.find({
       	$("#raddress1").text(address1);
       	$("#raddress2").text(address2);
       	$("#rdesc").text(desc);
-
+        $("#rphone").text(rphone);
+        $("#rmenu").attr("href",rweb);
       }},
       error: function(error){
       	console.log(error);
