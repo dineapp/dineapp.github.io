@@ -85,6 +85,15 @@ $(".ans7").click(function(){
 	currentUser.save(null, {
 		success: function(user) {
 			if (has_taken == true){
+			 analytics.track("profile",{
+				"answer0": ans0,
+				"answer1": ans1,
+				"answer2": ans3,
+				"answer3": ans4,
+				"answer4": ans5,
+				"answer5": ans6,
+				"answer6": ans7,
+			});
     	window.location.href="../HTML/app.html"
     } else{
     	$("#new_user").css("display","inline");

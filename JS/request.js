@@ -1,6 +1,7 @@
 Parse.initialize("RnRYjP71R4vP3HiQoApoBIYK6WZbqre87TLSMFtv", "euBHIslJrC2Xa5y0tuJNl1iVZTPXmGBqcKyyga6j");
 var currentUser = Parse.User.current();
-var requestID = window.location.toString().split("?")[1];
+var requestID = window.location.toString().split("?")[1]
+
 var userEmail = currentUser.get("email");
 var userFirstName = currentUser.get("first_name");
 var userLastName = currentUser.get("last_name");
@@ -14,10 +15,10 @@ var openRestaurants = new Parse.Query("Request");
 openRestaurants.equalTo("objectId", requestID);
 openRestaurants.include("concierge");
 openRestaurants.find({
-  
   success: function(results) {
      for (var i = 0; i < results.length; i++) { 
       	var object = results[i];
+        console.log("success");
       	request = results[i];
       	var day = setDate(object.get("date"));
       	var status = statusText(object.get("status"));
